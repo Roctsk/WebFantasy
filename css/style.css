@@ -11,7 +11,7 @@ header{
     display: flex;
     justify-content: space-between;
     background-color: #0e1a40;
-    padding: 1px;
+    padding: 0px;
 }
 
 .header-left, .header-center, .header-right {
@@ -20,7 +20,7 @@ header{
 }
 
 .header-left{
-  font-family: "Lobster", sans-serif;
+  font-family: "Comic Relief", system-ui;
   margin-left: 30px;
 }
 
@@ -73,6 +73,7 @@ main{
   background-color:#946b2d;
   height: 50vh; 
   padding: 100px;
+  gap: 30px;
 }
 
 .block{
@@ -81,6 +82,21 @@ main{
     height: 500px;
     z-index: 2;
 }
+
+.block1{
+  background-color: aliceblue;
+  width: 800px;
+  height: 500px;
+  z-index: 2;
+}
+
+.block2{
+  background-color: aliceblue;
+  width: 800px;
+  height: 500px;
+  z-index: 2;
+}
+
 
 
 
@@ -254,33 +270,33 @@ footer .containers form {
 
 footer .containers input,
 footer .containers textarea {
-    width: 90%;
-    max-width: 500px;
-    padding: 15px;
-    border: 1px solid white;
-    border-radius: 20px;
-    background-color: transparent; 
-    color: white;
-    font-size: 16px;
-    outline: none; 
+  width: 90%;
+  max-width: 500px;
+  padding: 15px;
+  border: 1px solid white;
+  border-radius: 20px;
+  background-color: transparent; 
+  color: white;
+  font-size: 16px;
+  outline: none; 
 }
 footer .containers textarea {
     resize: vertical;
 }
 
 footer .containers button {
-    font-family: cursive;
-    max-width: 200px;
-    padding: 12px;
-    border: none;
-    border-radius: 20px;
-    background-color:#946b2d;
-    color: white;
-    cursor: pointer;
-    font-size: 16px;
-    align-self: center;
-    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.6);
-    transition: transform 0.3s ease, background-color 0.3s ease;
+  font-family: cursive;
+  max-width: 200px;
+  padding: 12px;
+  border: none;
+  border-radius: 20px;
+  background-color:#946b2d;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  align-self: center;
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.6);
+  transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
 footer .containers button:hover {
