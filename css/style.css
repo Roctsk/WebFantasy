@@ -8,10 +8,11 @@ body{
 }
 
 header{
-    display: flex;
-    justify-content: space-between;
-    background-color: #0e1a40;
-    padding: 0px;
+  display: flex;
+  justify-content: space-between;
+  background: linear-gradient(135deg, #0e1a40, #274690, #8ea6d9, #274690);
+  padding: 0px;
+  height: 120px; 
 }
 
 .header-left, .header-center, .header-right {
@@ -24,26 +25,96 @@ header{
   margin-left: 30px;
 }
 
-
-
-.header-left a,
-.header-right a {
-    padding: 10px;
-    font-size: 35px;
-    color: white;
-    text-decoration: none;
+.header-right{    
+  display: flex;
+  align-items: center;
+  gap: 70px;
+  padding: 10px 20px;
+  border-radius: 12px;
 }
 
+.search-form {
+  display: flex;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.search-form input {
+  border: none;
+  padding: 8px 12px;
+  font-size: 14px;
+  outline: none;
+  background: transparent;
+}
+
+.search-form button {
+  background-color:#8ea6d9 ;
+  border: none;
+  color: white;
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.search-form button:hover {
+  background-color: #274690;
+}
+
+.header-right a {
+  font-size: 25px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 8px 14px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid #fff;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.header-right a:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+  color: #000;
+}
+
+
+.header-left a {
+  padding: 10px;
+  font-size: 35px;
+  color: white;
+  text-decoration: none;
+  animation: slideInTop 2.3s ease-out forwards;
+}
+
+@keyframes slideInTop {
+  0% {
+    transform: translateY(-120%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+
 .header-center h1 {
-    font-family: "Bebas Neue", sans-serif;
-    font-size: 60px;
-    color: white;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 70px;
+  padding: 0;
+  color: white;
+
+  z-index: 1000;
 }
 
 .search-form {
     display: flex;
     align-items: center;
-    gap: 5px;
+    gap: 10px;
+    padding: 5px;
 }
 
 .search-form input[type="text"] {
@@ -65,37 +136,258 @@ header{
 
 
 
-
-main{
+main {
   display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;    
-  background-color:#946b2d;
-  height: 50vh; 
+  background-color: #946b2d;
+  height: auto;
   padding: 100px;
   gap: 30px;
 }
 
-.block{
-    background-color: aliceblue;
-    width: 800px;
-    height: 500px;
-    z-index: 2;
-}
 
-.block1{
+/* .block{
+  position: relative;
   background-color: aliceblue;
-  width: 800px;
-  height: 500px;
+  width: 900px;
+  height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
   z-index: 2;
 }
 
-.block2{
-  background-color: aliceblue;
-  width: 800px;
-  height: 500px;
-  z-index: 2;
+.question{
+  display: flex;
+  align-items: center;
+  flex: 1;
+  height: 100%;
+  border-radius:2px solid #000;
 }
+
+.answered {
+  background-color: #8ea6d9;
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  justify-content: center;
+  align-items: flex-start;
+} */
+
+
+
+.film-section {
+  padding: 20px 0;
+}
+
+.image-container {
+  position: relative;
+  display: flex;
+  flex-direction: row-reverse;
+  max-width: 1000px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 16px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.content {
+  position: absolute;
+  padding: 20px;
+  width: 100%;
+  height: 140%;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.8));
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.Poterr {
+  padding: 10px 20px;
+  font-size: 16px;
+  background: linear-gradient(135deg, #0e1a40, #274690, #8ea6d9, #274690);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 250px;
+  margin: 0 auto;
+  color: lightgrey;
+}
+
+.Poterr:hover {
+  background: linear-gradient(135deg, #274690, #0e1a40, #274690, #8ea6d9);
+  color: aliceblue;
+}
+.Chronici {
+  padding: 10px 20px;
+  font-size: 16px;
+  background: linear-gradient(135deg, #ff7f00, #f8a300, #f9c22e, #f8a300);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 250px;
+  margin: 0 auto;
+  color: black;
+}
+
+.Chronici:hover {
+  background: linear-gradient(135deg, #f9c22e, #ff7f00, #f8a300, #f9c22e);
+  color: aliceblue;
+}
+
+@keyframes slideInLeft {
+  0% {
+    transform: translateX(-120%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInRight {
+  0% {
+    transform: translateX(120%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.film-section:nth-child(1) {
+  animation: slideInLeft 2.3s ease-out forwards;
+}
+
+.film-section:nth-child(2) {
+  animation: slideInRight 2.3s ease-out forwards;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.harry-potter-section {
+  padding: 40px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.harry-potter-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  max-width: 1200px;
+  width: 100%;
+}
+
+.harry-potter-container img {
+  width: 50%;
+  height: auto;
+  object-fit: cover;
+}
+
+.harry-potter-content {
+  padding: 20px;
+  max-width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.harry-potter-content h2 {
+  margin-bottom: 15px;
+  font-size: 24px;
+}
+
+.harry-potter-content p {
+  font-size: 16px;
+}
+
+/* Хроніки Нарнії */
+.chronicles-of-narnia-section {
+  padding: 40px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.chronicles-of-narnia-container {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  max-width: 1200px;
+  width: 100%;
+}
+
+.chronicles-of-narnia-container img {
+  width: 2000%;
+  height: auto;
+  object-fit: cover;
+}
+
+.chronicles-of-narnia-content {
+  padding: 20px;
+  max-width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.chronicles-of-narnia-content h2 {
+  margin-bottom: 15px;
+  font-size: 24px;
+}
+
+.chronicles-of-narnia-content p {
+  font-size: 16px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -112,8 +404,8 @@ footer {
   align-items: center;
   width: 100%;
   border-top: 2px solid #fff;
-  background-color: #0a142f;
-  }
+  background: linear-gradient(135deg, #0e1a40, #274690, #8ea6d9, #274690, #274690);
+}
   
 
 footer .container {
@@ -280,6 +572,12 @@ footer .containers textarea {
   font-size: 16px;
   outline: none; 
 }
+
+input[type="email"]::placeholder,
+textarea::placeholder {
+  color: #cccccc;
+}
+
 footer .containers textarea {
     resize: vertical;
 }
