@@ -29,18 +29,7 @@
 </header>
 
 <main>
-<!-- <div class="block">
-    <div class="question">
-        <h1>Запитання</h1>
-    </div>
-    <div class="answered">
-        <p>Відповідь 1 </p>
-        <p>Відповідь 1 </p>
-        <p>Відповідь 1 </p>
-        <p>Відповідь 1 </p>
-    </div>
-</div> -->
-
+    <!-- Гаррі Поттер секція -->
     <section class="film-section">
         <div class="image-container">
             <img src="img/bg_Harry_Poter.jpeg" alt="Гаррі Поттер" style="width: 910px;height: 490px;">
@@ -49,45 +38,82 @@
                     <h2>Приєднатися до тесту Гаррі Поттер</h2>
                     <p>Трохи про фільм: Гаррі Поттер — історія про хлопчика, який дізнається, що є чарівником...</p>
                 </div>
-                <button class="Poterr">Приєднатися до тесту</button>
+                <button id="start-harry-button" class="Poterr">Приєднатися до тесту</button>
             </div>
         </div>
     </section>
 
+    <!-- Квіз Гаррі Поттера -->
+    <div id="quiz-container" style="display:none;">
+        <div id="question-container">
+            <div id="question"></div>
+            <div id="answers"></div>
+        </div>
+        <div id="result" style="display:none;">
+            <h2>Результати:</h2>
+            <p id="score"></p>
+            <button onclick="restartQuiz()">Пройти знову</button>
+            <div class="result-buttons">
+                <a href="index.html" class="harry-btn">Повернутися на головний екран</a>
+            </div>              
+        </div>
+    </div>
+
+    <!-- Хроніки Нарнії секція -->
     <section class="film-section">
         <div class="image-container">
-            <img src="img/bg_Chronics.png" alt="Гаррі Поттер">
+            <img src="img/bg_Chronics.png" alt="">
             <div class="content">
                 <div class="clised">
                     <h2>Приєднатися до тесту Хроніки Нарнії</h2>
                     <p>Трохи про фільм: «Хроніки Нарнії» — історія про чотирьох дітей, які через старе дзеркало потрапляють у чарівний світ...</p>
                 </div>
-                <button class="Chronici">Приєднатися до тесту</button>
+                <button id="start-narnia-button" class="Chronici">Приєднатися до тесту</button>
             </div>
         </div>
     </section>
 
+<!-- Квіз Хроніки Нарнії -->
+<div id="narnia-quiz-container" style="display:none;">
+    <div id="narnia-question-container">
+        <div id="narnia-question"></div>
+        <div id="narnia-answers"></div>
+    </div>
+    <div id="narnia-result" style="display:none;">
+        <h2>Результати:</h2>
+        <div class="result-buttons">
+            <button class="narnia-btn" onclick="restartNarniaQuiz()">Пройти знову</button>
+            <a href="index.html" class="narnia-btn">Повернутись на головний екран</a>
+          </div>
+        <p id="narnia-score"></p>
+    </div>
+</div>
+
 </main>
 
-<section class="harry-potter-section">
-    <div class="harry-potter-container">
-        <img src="img/harry-potter-inform.png" alt="Гаррі Поттер">
-        <div class="harry-potter-content">
-            <h2>Гаррі Поттер — головні герої</h2>
-            <p>Гаррі Поттер — історія про хлопчика, який дізнається, що він є чарівником. Відзначений важливими подіями, він стає частиною чарівного світу і бореться з темними силами. Разом з друзями він проходить через численні випробування та мандри.</p>
-        </div>
+
+<section class="section-wrapper harry-potter-section">
+    <div class="containeres">
+      <img src="img/harry-potter-inform.png" alt="Гаррі Поттер">
+      <div class="contents">
+        <h1>Гаррі Поттер — головні герої</h1>
+        <p>Гаррі Поттер — це неймовірна історія про звичайного хлопчика, який одного дня дізнається, що є чарівником. Його життя назавжди змінюється, коли він вступає до школи магії — Гоґвортс, де знаходить друзів, ворогів і своє справжнє призначення. Гаррі стає центральною фігурою у боротьбі проти темних сил, що загрожують усьому чарівному світу./p>
+      </div>
     </div>
 </section>
 
-<section class="chronicles-of-narnia-section">
-    <div class="chronicles-of-narnia-container">
-        <img src="img/Chronicles_of_Narnia.png" alt="Хроніки Нарнії">
-        <div class="chronicles-of-narnia-content">
-            <h2>Хроніки Нарнії — головні герої</h2>
-            <p>«Хроніки Нарнії» — це історія про чотирьох дітей, які потрапляють у чарівний світ через старе дзеркало. Вони зустрічають лева Аслана, який є символом добра, та протистоять злим силам, що прагнуть контролювати цей світ.</p>
+<div class="gradient-transition"></div>
+
+<section class="section-wrapper chronicles-of-narnia-section">
+    <div class="containeres">
+        <div class="contents">
+            <h1>Хроніки Нарнії — головні герої</h1>
+            <p>«Хроніки Нарнії» — це захоплива історія про чотирьох дітей, які випадково потрапляють у чарівний і загадковий світ. У Нарнії вони зустрічають мудрого і могутнього лева Аслана, який є символом добра, надії та справедливості. Разом із ним діти ведуть боротьбу проти злих сил, що намагаються підкорити цей світ темряві.</p>
         </div>
+    <img src="img/gen-hero-chronicu.png" alt="Хроніки Нарнії">
     </div>
 </section>
+  
 
 
 <footer>
