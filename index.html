@@ -29,65 +29,86 @@
 </header>
 
 <main>
-    <!-- Гаррі Поттер секція -->
-    <section class="film-section">
-        <div class="image-container">
-            <img src="img/bg_Harry_Poter.jpeg" alt="Гаррі Поттер" style="width: 910px;height: 490px;">
-            <div class="content">
-                <div class="clised">
-                    <h2>Приєднатися до тесту Гаррі Поттер</h2>
-                    <p>Трохи про фільм: Гаррі Поттер — історія про хлопчика, який дізнається, що є чарівником...</p>
-                </div>
-                <button id="start-harry-button" class="Poterr">Приєднатися до тесту</button>
+<!-- Гаррі Поттер секція -->
+<section class="film-section">
+    <div class="image-container">
+        <img src="img/bg_Harry_Poter.jpeg" alt="Гаррі Поттер" style="width: 910px;height: 490px;">
+        <div class="content">
+            <div class="clised">
+                <h2>Приєднатися до тесту Гаррі Поттер</h2>
+                <p>Трохи про фільм: Гаррі Поттер — історія про хлопчика, який дізнається, що є чарівником...</p>
             </div>
-        </div>
-    </section>
-
-    <!-- Квіз Гаррі Поттера -->
-    <div id="quiz-container" style="display:none;">
-        <div id="question-container">
-            <div id="question"></div>
-            <div id="answers"></div>
-        </div>
-        <div id="result" style="display:none;">
-            <h2>Результати:</h2>
-            <p id="score"></p>
-            <button onclick="restartQuiz()">Пройти знову</button>
-            <div class="result-buttons">
-                <a href="index.html" class="harry-btn">Повернутися на головний екран</a>
-            </div>              
+            <button id="start-harry-button" class="Poterr">Приєднатися до тесту</button>
         </div>
     </div>
+</section>
 
-    <!-- Хроніки Нарнії секція -->
-    <section class="film-section">
-        <div class="image-container">
-            <img src="img/bg_Chronics.png" alt="">
-            <div class="content">
-                <div class="clised">
-                    <h2>Приєднатися до тесту Хроніки Нарнії</h2>
-                    <p>Трохи про фільм: «Хроніки Нарнії» — історія про чотирьох дітей, які через старе дзеркало потрапляють у чарівний світ...</p>
-                </div>
-                <button id="start-narnia-button" class="Chronici">Приєднатися до тесту</button>
-            </div>
+<!-- Квіз Гаррі Поттера -->
+<div id="quiz-container" style="display:none;">
+    <div id="question-container">
+        <div id="timer"></div>
+        <div id="question"></div>
+        <div id="answers"></div>
+    </div>
+
+    <div id="result" style="display:none;">
+        <h2>Результати:</h2>
+        <p id="score"></p>
+        <div id="result-details"></div>
+        <ul id="detailed-results"></ul> 
+        <button onclick="restartQuiz()">Пройти знову</button>
+        <div class="result-buttons">
+            <a href="index.html" class="harry-btn">Повернутися на головний екран</a>
         </div>
-    </section>
+        
+        <div id="share-buttons">
+            <!-- Кнопки поділу результатами на соцмережах -->
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://yourwebsite.com" target="_blank" class="harry-btn">Поділитися на Facebook</a>
+            <a href="https://twitter.com/intent/tweet?text=Я пройшов квіз Гаррі Поттер і набрав ${harryScore} з ${harryQuestions.length} правильних відповідей!&url=http://yourwebsite.com" target="_blank" class="harry-btn">Поділитися в Twitter</a>
+        </div>
+    </div>
+</div>
+
+
+
+
+<!-- Хроніки Нарнії секція -->
+<section class="film-section">
+    <div class="image-container">
+        <img src="img/bg_Chronics.png" alt="Хроніки Нарнії">
+        <div class="content">
+            <div class="clised">
+                <h2>Приєднатися до тесту Хроніки Нарнії</h2>
+                <p>Трохи про фільм: «Хроніки Нарнії» — історія про чотирьох дітей, які через старе дзеркало потрапляють у чарівний світ...</p>
+            </div>
+            <button id="start-narnia-button" class="Chronici">Приєднатися до тесту</button>
+        </div>
+    </div>
+</section>
 
 <!-- Квіз Хроніки Нарнії -->
 <div id="narnia-quiz-container" style="display:none;">
     <div id="narnia-question-container">
         <div id="narnia-question"></div>
         <div id="narnia-answers"></div>
+        <div id="timers"></div>
     </div>
     <div id="narnia-result" style="display:none;">
         <h2>Результати:</h2>
         <div class="result-buttons">
             <button class="narnia-btn" onclick="restartNarniaQuiz()">Пройти знову</button>
             <a href="index.html" class="narnia-btn">Повернутись на головний екран</a>
-          </div>
+        </div>
+        
         <p id="narnia-score"></p>
+        <div id="narnia-detailed-results"></div> 
+        <div id="share-buttons">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://yourwebsite.com" target="_blank" class="narnia-btn">Поділитися на Facebook</a>
+            <a href="https://twitter.com/intent/tweet?text=Я пройшов квіз Хроніки Нарнії і набрав ${narniaScore} з ${narniaQuestions.length} правильних відповідей!&url=http://yourwebsite.com" target="_blank" class="narnia-btn">Поділитися в Twitter</a>
+        </div>
     </div>
 </div>
+
 
 </main>
 
