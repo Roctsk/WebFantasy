@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Підключення стилів -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" href="img/logo.png">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
@@ -11,7 +12,7 @@
 </head>
 <body>
 
-
+<!-- Заголовок сайту -->
 <header>
     <div class="header-left">
         <a href="#">Фантазія - це твоя сила</a>
@@ -20,6 +21,7 @@
         <h1>WizardWeb</h1>
     </div>
     <div class="header-right">
+        <!-- Форма пошуку -->
         <form class="search-form" action="#" method="get">
             <input type="text" placeholder="Пошук..." name="q">
             <button type="submit">🔍</button>
@@ -29,6 +31,7 @@
 </header>
 
 <main>
+
 <!-- Гаррі Поттер секція -->
 <section class="film-section">
     <div class="image-container">
@@ -38,6 +41,7 @@
                 <h2>Приєднатися до тесту Гаррі Поттер</h2>
                 <p>Трохи про фільм: Гаррі Поттер — історія про хлопчика, який дізнається, що є чарівником...</p>
             </div>
+            <!-- Кнопка для переходу до квізу Гаррі Поттера -->
             <button id="start-harry-button" class="Poterr">Приєднатися до тесту</button>
         </div>
     </div>
@@ -46,8 +50,11 @@
 <!-- Квіз Гаррі Поттера -->
 <div id="quiz-container" style="display:none;">
     <div id="question-container">
+        <!-- Таймер -->
         <div id="timer"></div>
+        <!-- Питання -->
         <div id="question"></div>
+        <!-- Варіанти відповідей -->
         <div id="answers"></div>
     </div>
 
@@ -56,21 +63,20 @@
         <p id="score"></p>
         <div id="result-details"></div>
         <ul id="detailed-results"></ul> 
+        <!-- Кнопка для повторного проходження тесту -->
         <button onclick="restartQuiz()">Пройти знову</button>
         <div class="result-buttons">
+            <!-- Повернення на головну сторінку -->
             <a href="index.html" class="harry-btn">Повернутися на головний екран</a>
         </div>
         
         <div id="share-buttons">
-            <!-- Кнопки поділу результатами на соцмережах -->
+            <!-- Кнопки для поділу результатами на соцмережах -->
             <a href="https://www.facebook.com/sharer/sharer.php?u=http://yourwebsite.com" target="_blank" class="harry-btn">Поділитися на Facebook</a>
-            <a href="https://twitter.com/intent/tweet?text=Я пройшов квіз Гаррі Поттер і набрав ${harryScore} з ${harryQuestions.length} правильних відповідей!&url=http://yourwebsite.com" target="_blank" class="harry-btn">Поділитися в Twitter</a>
+            <a href="https://twitter.com/intent/tweet?text=Я пройшов квіз Гаррі Поттер і набрав ${harryScore} з ${harryQuestions.length} правильних відповідей!&url=http://mywebsite.com" target="_blank" class="harry-btn">Поділитися в Twitter</a>
         </div>
     </div>
 </div>
-
-
-
 
 <!-- Хроніки Нарнії секція -->
 <section class="film-section">
@@ -81,6 +87,7 @@
                 <h2>Приєднатися до тесту Хроніки Нарнії</h2>
                 <p>Трохи про фільм: «Хроніки Нарнії» — історія про чотирьох дітей, які через старе дзеркало потрапляють у чарівний світ...</p>
             </div>
+            <!-- Кнопка для переходу до квізу Хроніки Нарнії -->
             <button id="start-narnia-button" class="Chronici">Приєднатися до тесту</button>
         </div>
     </div>
@@ -89,54 +96,58 @@
 <!-- Квіз Хроніки Нарнії -->
 <div id="narnia-quiz-container" style="display:none;">
     <div id="narnia-question-container">
+        <!-- Питання -->
         <div id="narnia-question"></div>
+        <!-- Варіанти відповідей -->
         <div id="narnia-answers"></div>
-        <div id="timers"></div>
+        <!-- Таймер для Хронік Нарнії -->
+        <div id="timer"></div>
     </div>
     <div id="narnia-result" style="display:none;">
         <h2>Результати:</h2>
-        <div class="result-buttons">
-            <button class="narnia-btn" onclick="restartNarniaQuiz()">Пройти знову</button>
-            <a href="index.html" class="narnia-btn">Повернутись на головний екран</a>
-        </div>
         
         <p id="narnia-score"></p>
+        <div id="narnia-result-details"></div>
         <div id="narnia-detailed-results"></div> 
+        <div class="result-buttons">
+            <!-- Кнопка для повторного проходження тесту -->
+            <button class="narnia-btn" onclick="restartNarniaQuiz()">Пройти знову</button>
+            <!-- Повернення на головну сторінку -->
+            <a href="index.html" class="narnia-btns">Повернутись на головний екран</a>
+        </div>
         <div id="share-buttons">
+            <!-- Кнопки для поділу результатами на соцмережах -->
             <a href="https://www.facebook.com/sharer/sharer.php?u=http://yourwebsite.com" target="_blank" class="narnia-btn">Поділитися на Facebook</a>
-            <a href="https://twitter.com/intent/tweet?text=Я пройшов квіз Хроніки Нарнії і набрав ${narniaScore} з ${narniaQuestions.length} правильних відповідей!&url=http://yourwebsite.com" target="_blank" class="narnia-btn">Поділитися в Twitter</a>
+            <a href="https://twitter.com/intent/tweet?text=Я пройшов квіз Хроніки Нарнії і набрав ${narniaScore} з ${narniaQuestions.length} правильних відповідей!&url=http://mywebsite.com" target="_blank" class="narnia-btn">Поділитися в Twitter</a>
         </div>
     </div>
 </div>
 
-
 </main>
 
-
+<!-- Інформація про героїв Гаррі Поттера -->
 <section class="section-wrapper harry-potter-section">
     <div class="containeres">
-      <img src="img/harry-potter-inform.png" alt="Гаррі Поттер">
+      <img src="img/harry-potter-inform.png" alt="" id="harry-image" class="fade-img">
       <div class="contents">
-        <h1>Гаррі Поттер — головні герої</h1>
-        <p>Гаррі Поттер — це неймовірна історія про звичайного хлопчика, який одного дня дізнається, що є чарівником. Його життя назавжди змінюється, коли він вступає до школи магії — Гоґвортс, де знаходить друзів, ворогів і своє справжнє призначення. Гаррі стає центральною фігурою у боротьбі проти темних сил, що загрожують усьому чарівному світу./p>
+        <h1 id="harry-title">Гаррі Поттер — головні герої</h1>
+        <p id="harry-text">Гаррі Поттер — це неймовірна історія про звичайного хлопчика, який одного дня дізнається, що є чарівником...</p>
       </div>
     </div>
 </section>
 
-<div class="gradient-transition"></div>
-
+<!-- Інформація про героїв Хронік Нарнії -->
 <section class="section-wrapper chronicles-of-narnia-section">
     <div class="containeres">
         <div class="contents">
-            <h1>Хроніки Нарнії — головні герої</h1>
-            <p>«Хроніки Нарнії» — це захоплива історія про чотирьох дітей, які випадково потрапляють у чарівний і загадковий світ. У Нарнії вони зустрічають мудрого і могутнього лева Аслана, який є символом добра, надії та справедливості. Разом із ним діти ведуть боротьбу проти злих сил, що намагаються підкорити цей світ темряві.</p>
+            <h1 id="narnia-title">Хроніки Нарнії — головні герої</h1>
+            <p id="narnia-text">«Хроніки Нарнії» — це захоплива історія про чотирьох дітей, які випадково потрапляють у чарівний і загадковий світ...</p>
         </div>
-    <img src="img/gen-hero-chronicu.png" alt="Хроніки Нарнії">
+        <img src="img/gen-hero-chronicu.png" alt="" id="narnia-image" class="fade-img">
     </div>
 </section>
-  
 
-
+<!-- Футер сайту -->
 <footer>
     <div class="container">
       <div class="profile">

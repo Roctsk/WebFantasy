@@ -8,74 +8,84 @@
     <link rel="icon" href="img/logo.png">
     <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet" />
 </head>
-  <body>
-    <div class="container" id="container">
-      <div class="form-container register-container">
-        <form action="#">
-          <h1>Register</h1>
-          <input type="text" placeholder="Name" required>
-          <input type="email" placeholder="Email" required>
-          <input type="password" placeholder="Password" required>
-          <button type="button" onclick="window.location.href='index.html'">Register</button>
-          <span>or use your account</span>
-          <div class="social-container">
-            <a href="#" class="social"><i class="lni lni-facebook-fill"></i></a>
-            <a href="#" class="social"><i class="lni lni-google"></i></a>
-            <a href="#" class="social"><i class="lni lni-linkedin-original"></i></a>
-          </div>
-        </form>
-      </div>
+<body>
 
-      <div class="form-container login-container">
-        <form action="#">
-          <h1>Login</h1>
-          <input type="email" placeholder="Email" required>
-          <input type="password" placeholder="Password" required>
-          <div class="content">
-            <div class="checkbox">
-              <input type="checkbox" id="checkbox">
-              <label>Remember me</label>
-            </div>
-            <div class="pass-link">
-              <a href="#">Forgot password?</a>
-            </div>
-          </div>
-          <button type="button" onclick="window.location.href='index.html'">Login</button>
-          <span>or use your account</span>
-          <div class="social-container">
-            <a href="#" class="social"><i class="lni lni-facebook-fill"></i></a>
-            <a href="#" class="social"><i class="lni lni-google"></i></a>
-            <a href="#" class="social"><i class="lni lni-linkedin-original"></i></a>
-          </div>
-        </form>
-      </div>
+  <!-- Контейнер для форм -->
+  <div class="container" id="container">
 
-      <div class="overlay-container">
-        <div class="overlay">
-          <div class="overlay-panel overlay-left">
-            <h1 class="title">Привіт<br>Друзі</h1>
-            <p>Якщо у вас є обліковий запис, увійдіть тут і отримуйте задоволення</p>
-            <button class="ghost" id="login">Login <i class="lni lni-arrow-left"></i></button>
+    <!-- Форма реєстрації -->
+    <div class="form-container register-container">
+      <form action="#">
+        <h1>Register</h1>
+        <input type="text" placeholder="Name" required>
+        <input type="email" placeholder="Email" required>
+        <input type="password" placeholder="Password" required>
+        <button type="button" onclick="window.location.href='index.html'">Register</button>
+        <span>or use your account</span>
+        <div class="social-container">
+          <a href="#" class="social"><i class="lni lni-facebook-fill"></i></a>
+          <a href="#" class="social"><i class="lni lni-google"></i></a>
+          <a href="#" class="social"><i class="lni lni-linkedin-original"></i></a>
+        </div>
+      </form>
+    </div>
+
+    <!-- Форма входу -->
+    <div class="form-container login-container">
+      <form action="#">
+        <h1>Login</h1>
+        <input type="email" placeholder="Email" required>
+        <input type="password" placeholder="Password" required>
+        <div class="content">
+          <div class="checkbox">
+            <input type="checkbox" id="checkbox">
+            <label>Remember me</label>
           </div>
-          <div class="overlay-panel overlay-right">
-            <h1 class="title">Почніть свою<br>подорож зараз</h1>
-            <p>Якщо у вас немає облікового запису, зареєструйтеся зараз і приєднуйтесь до нас</p>
-            <button class="ghost" id="register">Register <i class="lni lni-arrow-right"></i></button>
+          <div class="pass-link">
+            <a href="#">Forgot password?</a>
           </div>
+        </div>
+        <button type="button" onclick="window.location.href='index.html'">Login</button>
+        <span>or use your account</span>
+        <div class="social-container">
+          <a href="#" class="social"><i class="lni lni-facebook-fill"></i></a>
+          <a href="#" class="social"><i class="lni lni-google"></i></a>
+          <a href="#" class="social"><i class="lni lni-linkedin-original"></i></a>
+        </div>
+      </form>
+    </div>
+
+    <!-- Панель для перемикання між формами -->
+    <div class="overlay-container">
+      <div class="overlay">
+        <div class="overlay-panel overlay-left">
+          <h1 class="title">Привіт<br>Друзі</h1>
+          <p>Якщо у вас є обліковий запис, увійдіть тут і отримуйте задоволення</p>
+          <button class="ghost" id="login">Login <i class="lni lni-arrow-left"></i></button>
+        </div>
+        <div class="overlay-panel overlay-right">
+          <h1 class="title">Почніть свою<br>подорож зараз</h1>
+          <p>Якщо у вас немає облікового запису, зареєструйтеся зараз і приєднуйтесь до нас</p>
+          <button class="ghost" id="register">Register <i class="lni lni-arrow-right"></i></button>
         </div>
       </div>
     </div>
-    <div class="img-HarryPoter">
-      <img src="img/Harry Potter.png" alt="">
-      <div class="comment" id="harry-comment">
-        <p>Ласкаво просимо до Гоґвортсу!</p>
-      </div>
+  </div>
+
+  <!-- Зображення Гаррі Поттера -->
+  <div class="img-HarryPoter">
+    <img src="img/Harry Potter.png" alt="">
+    <div class="comment" id="harry-comment">
+      <p>Ласкаво просимо до Гоґвортсу!</p>
     </div>
+  </div>
 
-    <audio id="bg-music" autoplay loop>
-      <source src="music/bg.mp3" type="audio/mpeg">
-    </audio>
+  <!-- Фонове аудіо -->
+  <audio id="bg-music" autoplay loop>
+    <source src="music/bg.mp3" type="audio/mpeg">
+  </audio>
 
-    <script src="js/register.js"></script>
-  </body>
+  <!-- Скрипт для перемикання між формами -->
+  <script src="js/register.js"></script>
+</body>
 </html>

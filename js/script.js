@@ -22,27 +22,90 @@ document.addEventListener("DOMContentLoaded", function () {
       });
   });
 
-  // Кнопки для запуску відповідного квізу
-  const btnPotter = document.getElementById("start-harry-button");
-  const btnNarnia = document.getElementById("start-narnia-button");
+
   
-  const filmSections = document.querySelectorAll(".film-section");
-  const quizPotter = document.getElementById("quiz-container");
-  const quizNarnia = document.getElementById("narnia-quiz-container");
+function toggleContent(imgElement, src1, src2, titleElement, textElement, title1, title2, text1, text2) {
+  // Зробити зображення та текст прозорими
+  imgElement.style.opacity = 0;
+  titleElement.style.opacity = 0;
+  textElement.style.opacity = 0;
 
-  // Обробник для кнопки старту квізу Гаррі Поттера
-  btnPotter.addEventListener("click", () => {
-      filmSections.forEach(section => section.style.display = "none");
-      quizPotter.style.display = "block";
-      showHarryQuestion();
-  });
+  // Затримка для плавної зміни
+  setTimeout(() => {
+    const isOriginal = imgElement.src.includes(src1);
+    imgElement.src = isOriginal ? src2 : src1;
 
-  // Обробник для кнопки старту квізу Нарнії
-  btnNarnia.addEventListener("click", () => {
-      filmSections.forEach(section => section.style.display = "none");
-      quizNarnia.style.display = "block";
-      showNarniaQuestion();
-  });
+    // Зміна тексту і заголовку
+    titleElement.textContent = isOriginal ? title2 : title1;
+    textElement.textContent = isOriginal ? text2 : text1;
+
+    imgElement.style.opacity = 1;
+    titleElement.style.opacity = 1;
+    textElement.style.opacity = 1;
+  }, 300);
+}
+
+// Отримуємо елементи для Гаррі Поттера
+const harry = document.getElementById('harry-image');
+const harryTitle = document.getElementById('harry-title');
+const harryText = document.getElementById('harry-text');
+
+// Подія кліку для Гаррі Поттера
+harry.addEventListener('click', () => {
+  toggleContent(
+    harry,
+    'img/harry-potter-inform.png',
+    'img/Jona_Rowling.png',
+    harryTitle,
+    harryText,
+    'Гаррі Поттер — головні герої',
+    'Джоан Роулінґ — авторка',
+    'Гаррі Поттер — це неймовірна історія про звичайного хлопчика, який одного дня дізнається, що є чарівником. Його життя назавжди змінюється, коли він вступає до школи магії — Гоґвортс, де знаходить друзів, ворогів і своє справжнє призначення. Гаррі стає центральною фігурою у боротьбі проти темних сил, що загрожують усьому чарівному світу.',
+    ' Джоан Роулінґ — британська письменниця, яка стала всесвітньо відомою завдяки створенню магічного всесвіту Гаррі Поттера. Першу книгу серії "Гаррі Поттер і філософський камінь" вона написала в кінці 1990-х років, і з того часу книги стали одними з найпопулярніших у світі.'
+  );
+});
+
+// Отримуємо елементи для Нарнії
+const narnia = document.getElementById('narnia-image');
+const narniaTitle = document.getElementById('narnia-title');
+const narniaText = document.getElementById('narnia-text');
+
+// Подія кліку для Нарнії
+narnia.addEventListener('click', () => {
+  toggleContent(
+    narnia,
+    'img/gen-hero-chronicu.png',
+    'img/Clive_Staples_Lewis.png',
+    narniaTitle,
+    narniaText,
+    'Хроніки Нарнії — головні герої',
+    'Клайв Стейплз Льюїс — автор',
+    '«Хроніки Нарнії» — це захоплива історія про чотирьох дітей, які випадково потрапляють у чарівний і загадковий світ. У Нарнії вони зустрічають мудрого і могутнього лева Аслана, який є символом добра, надії та справедливості. Разом із ним діти ведуть боротьбу проти злих сил, що намагаються підкорити цей світ темряві.',
+    'Клайв Стейплз Льюїс — англійський письменник, літературний критик, філософ і християнський теолог, найбільш відомий як автор класичної фентезійної серії «Хроніки Нарнії». Льюїс народився в 1898 році в Белфасті, Ірландія, і став одним з найвпливовіших літераторів XX століття.'
+  );
+});
+
+  // Кнопки для запуску відповідного квізу
+const btnPotter = document.getElementById("start-harry-button");
+const btnNarnia = document.getElementById("start-narnia-button");
+
+const filmSections = document.querySelectorAll(".film-section");
+const quizPotter = document.getElementById("quiz-container");
+const quizNarnia = document.getElementById("narnia-quiz-container");
+
+// Обробник для кнопки старту квізу Гаррі Поттера
+btnPotter.addEventListener("click", () => {
+    filmSections.forEach(section => section.style.display = "none");
+    quizPotter.style.display = "block";
+    showHarryQuestion();
+});
+
+// Обробник для кнопки старту квізу Нарнії
+btnNarnia.addEventListener("click", () => {
+    filmSections.forEach(section => section.style.display = "none");
+    quizNarnia.style.display = "block";
+    showNarniaQuestion();
+});
 });
 
 // ------------------ Гаррі Поттер: Питання ------------------
@@ -114,7 +177,7 @@ let timeLeft = 20;
 function startTimer() {
   const timerEl = document.getElementById("timer");
   timer = setInterval(() => {
-    timerEl.textContent = `Часу залишилося: ${timeLeft} секунд`;
+    timerEl.textContent = `${timeLeft} секунд`;
     timeLeft--;
     if (timeLeft < 0) {
       clearInterval(timer);
@@ -126,26 +189,42 @@ function startTimer() {
 // Функція для відображення питання та варіантів відповідей
 function showHarryQuestion() {
   const q = harryQuestions[harryIndex];
+
+  // Перемішуємо варіанти відповідей
+  const options = [...q.options];
+  shuffleArray(options); // Перемішуємо варіанти
+
+  // Зберігаємо новий індекс правильної відповіді після перемішування
+  const correctIndex = options.indexOf(q.options[q.answer]);
+
   document.getElementById("question").textContent = q.question;
 
   const answersEl = document.getElementById("answers");
   answersEl.innerHTML = "";
 
-  // Скидаємо таймер
   timeLeft = 20;
   startTimer();
 
-  q.options.forEach((opt, index) => {
+  options.forEach((opt, index) => {
     const btn = document.createElement("button");
     btn.textContent = opt;
-    btn.onclick = () => handleHarryAnswer(index);
+    btn.onclick = () => handleHarryAnswer(index, correctIndex);
     answersEl.appendChild(btn);
   });
 }
 
+
+// Функція для перемішування масиву
+function shuffleArray(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+}
+
+
 // Функція для обробки вибору відповіді користувачем
-function handleHarryAnswer(selectedIndex) {
-  const correctIndex = harryQuestions[harryIndex].answer;
+function handleHarryAnswer(selectedIndex, correctIndex) {
   const buttons = document.querySelectorAll("#answers button");
 
   // Зупиняємо таймер після відповіді
@@ -180,6 +259,7 @@ function handleHarryAnswer(selectedIndex) {
     }
   }, 1000);
 }
+
 
 // Функція для відображення результатів квізу Гаррі Поттера
 function showHarryResult() {
@@ -337,6 +417,13 @@ function startNarniaTimer() {
   }, 1000);
 }
 
+function shuffleArray(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]]; 
+  }
+}
+
 // Функція для відображення питання та варіантів відповідей
 function showNarniaQuestion() {
   const q = narniaQuestions[narniaIndex];
@@ -345,17 +432,28 @@ function showNarniaQuestion() {
   const answersEl = document.getElementById("narnia-answers");
   answersEl.innerHTML = "";
 
+  // Створюємо масив об'єктів з текстом і оригінальним індексом
+  const optionsWithIndex = q.options.map((opt, idx) => ({
+    text: opt,
+    originalIndex: idx
+  }));
+
+  // Перемішуємо ці об'єкти
+  shuffleArray(optionsWithIndex);
+
   // Скидаємо таймер
   timeLefts = 20;
   startNarniaTimer();
 
-  q.options.forEach((opt, index) => {
+  // Створюємо кнопки для варіантів відповідей
+  optionsWithIndex.forEach((optObj) => {
     const btn = document.createElement("button");
-    btn.textContent = opt;
-    btn.onclick = () => handleNarniaAnswer(index);
+    btn.textContent = optObj.text;
+    btn.onclick = () => handleNarniaAnswer(optObj.originalIndex); // передаємо оригінальний індекс!
     answersEl.appendChild(btn);
   });
 }
+
 
 // Функція для обробки вибору відповіді користувачем
 function handleNarniaAnswer(selectedIndex) {
@@ -431,21 +529,27 @@ function showNarniaResult() {
   list.innerHTML = "";
 
   // Заповнюємо список детальних результатів
-  narniaAnswers.forEach((entry, index) => {
-    const li = document.createElement("li");
-    li.innerHTML = `
-      Питання ${index + 1}: ${entry.correct ? "Правильна ✅" : "Неправильна ❌"}<br>
-      <strong>Ваш вибір:</strong> ${narniaQuestions[index].options[entry.selectedAnswer]}<br>
-      <strong>Правильний варіант:</strong> ${narniaQuestions[index].options[narniaQuestions[index].answer]}
-    `;
-    list.appendChild(li);
-  });
+  const lists = document.getElementById("narnia-detailed-results");
+  if (lists) {
+    lists.innerHTML = "";
+    narniaAnswers.forEach((entry, index) => {
+      const li = document.createElement("li");
+      li.innerHTML = `
+        <strong>Питання ${index + 1}:</strong><br>
+        <em>Ваш вибір:</em> ${narniaQuestions[index].options[entry.selectedAnswer]}<br>
+        <em>Правильний варіант:</em> ${narniaQuestions[index].options[narniaQuestions[index].answer]}<br>
+        <em>Статус:</em> ${entry.correct ? "Правильна ✅" : "Неправильна ❌"}
+      `;
+      lists.appendChild(li);
+    });
+  }
+  
 
   // Кнопки для поділу результатами
   const shareButtons = document.getElementById("narnia-share-buttons");
   shareButtons.innerHTML = `
     <a href="https://www.facebook.com/sharer/sharer.php?u=http://yourwebsite.com" target="_blank" class="narnia-btn">Поділитися на Facebook</a>
-    <a href="https://twitter.com/intent/tweet?text=Я пройшов квіз Нарнія і набрав ${narniaScore} з ${narniaQuestions.length} правильних відповідей!&url=http://yourwebsite.com" target="_blank" class="narnia-btn">Поділитися в Twitter</a>
+    <a href="https://twitter.com/intent/tweet?url=http://mywebsite.com" target="_blank" class="narnia-btn">Поділитися в Twitter</a>
   `;
 }
 
